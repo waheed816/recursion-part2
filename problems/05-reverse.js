@@ -13,10 +13,21 @@ reverse(""); // ""
 ***********************************************************************/
 
 
-function reverse(str) {
-  // Your code here
+function reverse(str, arr = str.split(''), result = '') {
+  if (!arr.length) {
+    return result;
+  }
+  result += arr.pop();
+
+  return reverse(str, arr, result);
 }
 
+console.log(reverse("house")); // "esuoh"
+console.log(reverse("dog")); // "god"
+console.log(reverse("atom")); // "mota"
+console.log(reverse("q")); // "q"
+console.log(reverse("id")); // "di"
+console.log(reverse("")); // ""
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
